@@ -1,0 +1,22 @@
+<div class = "row">
+	<div class = "col col-md-8 col-md-offset-2"</div>
+		<h1>All Users</h1>
+			<table>
+				<tr>
+					<th class ="id">Id</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			<% @user.each do |u|%>
+			<tr>
+				<td><%=u.id%></td>
+				<td><%=u.name%></td>
+				<td><%=u.email%></td>
+				<td><%=link_to "Edit", edit_user_path(u) %></td>
+				<td><%=link_to "Delete", u, method: :delete, data: {confirm: "Are you sure?"}%></td>
+			</tr>
+			<%end%>
+	</div>
+</div>

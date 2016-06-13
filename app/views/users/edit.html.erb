@@ -1,0 +1,27 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+  	<%if @user.errors.any?%>
+  	<% @user.errors.messages.each do |m|%>
+  	<ul>
+  	<li><%= m%></li>
+  </ul>
+  	<%end%>
+  	<%end%>
+  	<h1>Edit user details</h1>
+
+<%= form_for @user do |user|%>
+<%=user.label :name %>
+<%=user.text_field :name, class: 'form-control' %>
+<%=user.label :email %>
+<%=user.email_field :email, class: 'form-control' %>
+
+
+<%= user.submit "Save" , class: "btn btn-primary"%>
+<%= %>
+<%= %>
+<%end %>
+</div>
+</div>
+</div>
